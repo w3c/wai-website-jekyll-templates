@@ -1,17 +1,17 @@
 <section class="default-grid info" tabindex="0">
-  <p class="inner"><svg aria-hidden="true" class="icon-info "><use xlink:href="/assets/images/icons.svg#icon-info"></use></svg>This is an unpublished draft preview. Please refer to our published website at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.
+  <p class="inner"><svg aria-hidden="true" class="icon-info "><use xlink:href="{{ "/assets/images/icons.svg#icon-info" | prepend: site.baseurl }}"></use></svg>This is an unpublished draft preview. Please refer to our published website at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.
   </p>
 </section>
 
  <nav aria-label="Skip Link and Accessibility Options" id="controls" class="default-grid">
   <ul>
-    <li><a href="#main"><svg aria-hidden="true" class="icon-chevron-down "><use xlink:href="{{ "/assets/images/icons.svg#icon-chevron-down" | prepend: site.github.url }}"></use></svg> Skip to Content</a></li>
+    <li><a href="#main"><svg aria-hidden="true" class="icon-chevron-down "><use xlink:href="{{ "/assets/images/icons.svg#icon-chevron-down" | prepend: site.baseurl }}"></use></svg> Skip to Content</a></li>
     <li><a href="#">Change Text Size or Colors</a></li>
   </ul>
 </nav>
 <header id="site-header" class="default-grid with-gap">
   <div class="logos">
-  <img src="{{ "/assets/images/w3c.svg" | prepend: site.github.url }}" alt="W3C">
+  <img src="{{ "/assets/images/w3c.svg" | prepend: site.baseurl }}" alt="W3C">
   <span class="wai"><span class="wa">Web Accessibility</span> <span class="i">Initiative</span></span>
 </div>
 
@@ -26,7 +26,7 @@
             <span class="l">Search:</span>
             <input id="header-search" type="search" results="10" autosave="waisearches" placeholder="e.g. Tutorials">
           </label>
-          <button class="button button-icon button-nobg button-noborder"><span><svg aria-hidden="true" class="icon-search "><use xlink:href="{{ "/assets/images/icons.svg#icon-search" | prepend: site.github.url }}"></use></svg></span></button>
+          <button class="button button-icon button-nobg button-noborder"><span><svg aria-hidden="true" class="icon-search "><use xlink:href="{{ "/assets/images/icons.svg#icon-search" | prepend: site.baseurl }}"></use></svg></span></button>
         </form>
       </li>
     </ul>
