@@ -1,14 +1,25 @@
+{% comment %}
+The first section creates an array of page urls that are page urls of this collection. They then are compared to all page urls in the list below.
+{% endcomment %}
+{% assign col = site.collections | where: "label", page.collection | first %}
+{% for p in col.docs %}
+  {% if forloop.first %}
+    {% assign pgs = p.url %}
+  {% else %}
+    {% assign pgs = pgs | append: "," | append: p.url %}
+  {% endif %}
+{% endfor %}
+{% assign pgs = pgs | split: "," %}
 <nav class="sidenav sn-contents" label="Page Structure" id="contents">
-<div class="sidenav--head"><div class="sidenav--head-icon"><svg aria-hidden="true" class="icon-book sidenav--head-icon--inner"><use xlink:href="{{ "/assets/images/icons.svg#icon-book" | prepend: site.baseurl }}"></use></svg></div><div class="sidenav--head-title"><div class="sidenav--head-section">Plan &amp; Manage</div><div class="sidenav--head-subsection">Business Case</div>
+  <div class="sidenav--head"><div class="sidenav--head-icon">{% if col.icon %}<svg aria-hidden="true" class="icon-{{col.icon}} sidenav--head-icon--inner"><use xlink:href="{{ "/assets/images/icons.svg#icon-{{col.icon}}" | prepend: site.github.url }}"></use></svg>{% endif %}</div><div class="sidenav--head-title"><div class="sidenav--head-section">{{col.area}}</div><div class="sidenav--head-subsection">{{col.shortname}}</div>
+    </div>
   </div>
-</div>
-
-<ul class="sidenav--list">
-  {% assign my_pages = site.pages | sort: 'order' %}
-  {% for my_page in my_pages %}
-    {% if my_page.title %}
-    <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {% endif %} href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-</ul>
+  <ul class="sidenav--list">
+    {% assign my_pages = site.documents | sort: "order" %}
+    {% for my_page in my_pages %}
+      {% if pgs contains my_page.url %}
+      <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {% endif %} href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </nav>
