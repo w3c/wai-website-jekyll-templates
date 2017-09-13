@@ -11,9 +11,9 @@
 </nav>
 <header id="site-header" class="default-grid with-gap">
   <div class="logos">
-  <img src="{{ "/assets/images/w3c.svg" | prepend: site.baseurl }}" alt="W3C">
-  <span class="wai"><span class="wa">Web Accessibility</span> <span class="i">Initiative</span></span>
-</div>
+    <img src="{{ "/assets/images/w3c.svg" | prepend: site.github.url }}" alt="W3C">
+    <span class="wai"><span class="wa">Web Accessibility</span> <span class="i">Initiative</span></span>
+  </div>
 
   <div class="navigations">
   <nav class="metanav" label="Meta &amp; Search">
@@ -22,11 +22,13 @@
       <li><a href="#">Get Involved</a></li>
       <li>
         <form action="#" role="search">
-          <label for="header-search">
-            <span class="l">Search:</span>
-            <input id="header-search" type="search" results="10" autosave="waisearches" placeholder="e.g. Tutorials">
-          </label>
-          <button class="button button-icon button-nobg button-noborder"><span><svg aria-hidden="true" class="icon-search "><use xlink:href="{{ "/assets/images/icons.svg#icon-search" | prepend: site.baseurl }}"></use></svg></span></button>
+          <div>
+            <label for="header-search">
+              <span class="l">Search:</span>
+              <input id="header-search" type="search" results="10" autosave="waisearches" placeholder="e.g. Tutorials">
+            </label>
+            <button class="button button-icon button-nobg button-noborder"><span><svg aria-hidden="true" class="icon-search "><use xlink:href="{{ "/assets/images/icons.svg#icon-search" | prepend: site.github.url }}"></use></svg></span></button>
+          </div>
         </form>
       </li>
     </ul>
