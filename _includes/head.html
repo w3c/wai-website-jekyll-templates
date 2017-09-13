@@ -7,7 +7,7 @@
 
     function downloadJSAtOnload() {
       var element = document.createElement("script");
-      element.src = "{{ "/assets/scripts/main.js" | prepend: site.baseurl }}";
+      element.src = "{{ "/assets/scripts/main.js" | prepend: site.github.url }}";
       document.body.appendChild(element);
       document.body.dataset.menuExpanded = 'false';
     }
@@ -15,7 +15,7 @@
     window.addEventListener("load", downloadJSAtOnload, false);
   </script>
 
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | prepend: site.github.url }}">
 
   <title>{{ page.title | escape }} | {{ site.title | escape }} | Web Accessibility Initiative (WAI) | W3C</title>
 </head>
