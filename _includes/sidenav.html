@@ -18,7 +18,7 @@ The first section creates an array of page urls that are page urls of this colle
     {% assign my_pages = site.documents | sort: "order" %}
     {% for my_page in my_pages %}
       {% if pgs contains my_page.url %}
-      <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {% endif %} href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></li>
+      <li><a class="page-link" {% if my_page.url == page.url %} aria-current="page" {% endif %} href="{{ my_page.url | prepend: site.github.url }}">{% if my_page.nav_title %}{{ my_page.nav_title }}{% else %}{{ my_page.title }}{% endif %}</a></li>
       {% endif %}
     {% endfor %}
   </ul>
