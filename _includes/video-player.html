@@ -68,7 +68,6 @@
 
   var adbutton = document.querySelector('#audio_description_button');
   adbutton.addEventListener('click', function(e){
-    $('[data-video-type] iframe').attr('width', '450').attr('height', '253');
     player1.pauseMedia();
     player2.pauseMedia();
     if (e.target.getAttribute('data-status') == "audio-described") {
