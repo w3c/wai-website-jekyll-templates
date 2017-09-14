@@ -11,7 +11,7 @@ The first section creates an array of page urls that are page urls of this colle
 {% endfor %}
 {% assign pgs = pgs | split: "," %}
 <nav class="sidenav sn-contents" label="Page Structure" id="contents">
-  <div class="sidenav--head"><div class="sidenav--head-icon">{% if col.icon %}{% include icon.html name=col.icon class="sidenav--head-icon--inner" %}{% endif %}</div><div class="sidenav--head-title"><div class="sidenav--head-section">{{col.area}}</div><div class="sidenav--head-subsection">{{col.shortname}}</div>
+  <div class="sidenav--head"><div class="sidenav--head-icon">{% if col.icon %}{% include icon.html name=col.icon class="sidenav--head-icon--inner" %}{% endif %}</div><div class="sidenav--head-title"><div class="sidenav--head-section">{{col.area}}</div><div class="sidenav--head-subsection">{% if col.shortname %}{{ col.shortname }}{% else %}{{ col.name }}{% endif %}</div>
     </div>
   </div>
   <ul class="sidenav--list">
