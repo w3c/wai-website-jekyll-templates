@@ -13,3 +13,16 @@
 </div>
 <p><button id="audio_description_button"><svg aria-hidden="true" class="icon-audio-description "><use xlink:href="{{ "/assets/images/icons.svg#icon-audio-description" | prepend: site.github.url }}"></use></svg> <span>Enable Audio Description</span></button></p>
 {% endif %}
+
+<script src="{{ site.github.url }}/assets/scripts/modernizr.custom.js"></script>
+<script src="{{ site.github.url }}/assets/scripts/jquery.min.js"></script>
+<script src="{{ site.github.url }}/assets/scripts/js.cookie.js"></script>
+<script src="{{ site.github.url }}/assets/scripts/ableplayer.js"></script>
+<script>
+  var youTubeDataAPIKey = "{{site.ytapi}}";
+  var googleApiReady = false;
+  function initGoogleClientApi() {
+    googleApiReady = true;
+  }
+</script>
+<script src="//apis.google.com/js/client.js?onload=initGoogleClientApi"></script>
