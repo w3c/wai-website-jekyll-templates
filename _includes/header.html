@@ -34,26 +34,7 @@
     </ul>
   </nav>
   <nav class="mainnav" label="Main">
-    <ul>
-      <li>
-        <a href="#"><span>Menu 1</span></a>
-      </li>
-      <li>
-        <a href="#"><span>Menu 2</span></a>
-      </li>
-      <li>
-        <a href="#"><span>Menu 3</span></a>
-      </li>
-      <li>
-        <a href="#"><span>Menu 4</span></a>
-      </li>
-      <li>
-        <a href="#"><span>Menu 5</span></a>
-      </li>
-      <li>
-        <a href="#"><span>Menu 6</span></a>
-      </li>
-    </ul>
+    {% include navlist.html data=site.data.navigation depth=1 %}
   </nav>
 </div>
 
