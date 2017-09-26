@@ -42,9 +42,21 @@
 
 <nav class="breadcrumb default-grid" label="Breadcrumb">
   <ul class="default-container">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Path</a></li>
-    <li><a href="#">To</a></li>
-    <li><a href="#main" aria-current="page">Page</a></li>
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
+    {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+    {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
+    {% for i in (1..forLoopMaxInt) %}
+        {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+        {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+        {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
+        {% for breadcrumb_page in site.documents %}
+            {% if current_breadcrumb_url == breadcrumb_page.url %}
+                <li>
+                    <a{% if current_breadcrumb_url == page.url%} aria-current="page"{%endif%} href="{{ site.github.url }}{{current_breadcrumb_url}}">{% if breadcrumb_page.breadcrumb_title%}{{breadcrumb_page.breadcrumb_title}}{% else %}{{breadcrumb_page.title}}{% endif %}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
   </ul>
 </nav>
