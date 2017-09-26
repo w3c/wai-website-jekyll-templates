@@ -1,5 +1,9 @@
 {% assign col = site.collections | where: "label", page.collection | first %}
-{% assign docs = col.docs %}
+{% if page.group %}
+  {% assign docs = col.docs | where: "group", page.group %}
+{% else %}
+  {% assign docs = col.docs %}
+{% endif %}
 <nav class="pager" aria-label="Previous/Next Page">
   <ul>
     {% for p in docs %}{% assign tminus = page.order | minus: 1 %}{% if p.order == tminus %}
