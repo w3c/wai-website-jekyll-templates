@@ -1,3 +1,4 @@
+{% if page.order %}
 {% assign col = site.collections | where: "label", page.collection | first %}
 {% if page.group %}
   {% assign docs = col.docs | where: "group", page.group %}
@@ -30,3 +31,4 @@
   </ul>
   {% endif %}{% endfor %}
 </nav>
+{% endif %}
