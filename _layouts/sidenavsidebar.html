@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+
+<main id="main" class="default-grid with-gap leftcol">
+
+  {% include sidenav.html %}
+
+  <article class="content">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+    {% include prevnext.html %}
+  </article>
+  <a class="button button-backtotop" href="#main"><span>{% include icon.html name="arrow-up" %} Back to Top</span></a>
+</main>
+
+{% include footer.html %}
+
+  </body>
+</html>
