@@ -16,7 +16,7 @@
   </a>
 
   <div class="navigations">
-  <nav class="metanav" label="Meta &amp; Search">
+  <nav class="metanav" aria-label="Meta &amp; Search">
     <ul>
       <li><a href="{{ site.github.url }}/news/">News</a></li>
       <li><a href="{{ site.github.url }}/wai/get-involved/">Get Involved</a></li>
@@ -26,7 +26,7 @@
           <div>
             <label for="header-search">
               <span class="l">Search:</span>
-              <input id="header-search" type="search" results="10" autosave="waisearches" placeholder="e.g. Tutorials">
+              <input id="header-search" type="search" placeholder="e.g. Tutorials">
             </label>
             <button class="button button-icon button-nobg button-noborder"><span>{% include icon.html name="search" %}</span></button>
           </div>
@@ -34,7 +34,7 @@
       </li>
     </ul>
   </nav>
-  <nav class="mainnav" label="Main">
+  <nav class="mainnav" aria-label="Main">
     {% include navlist.html data=site.data.navigation depth=1 %}
   </nav>
 </div>
@@ -42,7 +42,7 @@
 </header>
 
 {% unless page.url == "/" %}
-<nav class="breadcrumb default-grid" label="Breadcrumb">
+<nav class="breadcrumb default-grid" aria-label="Breadcrumb">
   <ul class="default-container">
     <li><a href="{{ site.github.url }}/">Home</a></li>
     {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
