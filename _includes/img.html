@@ -1,0 +1,4 @@
+{% assign url = "/img/" %}
+{% if page.collection %}{% assign url = url | prepend: page.collection | prepend: '/' %}{% endif %}
+{% assign url = url | prepend: site.github.url %}
+<img src="{{url}}{{include.src}}" alt="{{include.alt}}"{% if input.class %} class="{% for class in input.class %} {{ class }}{% endfor %}"{% endif %}>
