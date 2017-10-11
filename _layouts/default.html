@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
   {% include head.html %}
-  <body>
+  <body id="top">
     {% include header.html %}
 
 <main id="main" class="default-grid with-gap{% unless page.noleftcol %} leftcol{% endunless %}" tabindex="-1">
@@ -11,7 +11,7 @@
     {{ content }}
     {% include prevnext.html %}
   </article>
-  <a class="button button-backtotop" href="#main"><span>{% include icon.html name="arrow-up" %} Back to Top</span></a>
+  <a class="button button-backtotop" href="#top"><span>{% include icon.html name="arrow-up" %} Back to Top</span></a>
 </main>
 
 {% include footer.html %}

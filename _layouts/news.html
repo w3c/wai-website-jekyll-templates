@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
   {% include head.html %}
-  <body>
+  <body id="top">
     {% include header.html %}
 
 <main id="main" tabindex="-1">
@@ -12,6 +12,7 @@
   </div>
     {{ content }}
     {% include prevnext.html %}
+    <a class="button button-backtotop" href="#top"><span>{% include icon.html name="arrow-up" %} Back to Top</span></a>
 </main>
 
 {% include footer.html %}
