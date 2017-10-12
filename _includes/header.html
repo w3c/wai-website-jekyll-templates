@@ -17,11 +17,11 @@
       <li><a href="{{ site.github.url }}/wai/get-involved/">Get Involved</a></li>
       <li><a href="{{ site.github.url }}/wai/about/">About W3C WAI</a></li>
       <li>
-        <form action="#" role="search">
+        <form action="https://duckduckgo.com/" role="search" onsubmit="document.querySelector('#header-search').value = document.querySelector('#header-search').value + ' site:w3c.github.io/wai-website/'">
           <div>
             <label for="header-search">
               <span class="l">Search:</span>
-              <input id="header-search" type="search" placeholder="e.g. Tutorials">
+              <input id="header-search" type="search" name="q" placeholder="e.g. Tutorials">
             </label>
             <button class="button button-icon button-nobg button-noborder"><span>{% include icon.html name="search" %}</span></button>
           </div>
