@@ -8,7 +8,7 @@
     {% assign the_name = item.name %}
   {% endif %}
   <li{% if item.pages %} class="has-submenu"{% endif %}>
-    <a{% if include.id %} id="{{item.name | slugify}}"{% endif %} href="{{ site.github.url }}{{the_url}}"><span>{{the_name}}{% if item.pages and include.depth > 1 %} {% include icon.html name="chevron-right" %}{% endif %}</span></a>
+    <a{% if include.id %} id="{{item.name | slugify}}"{% endif %} href="{{ site.github.url }}{{the_url}}"><span>{{the_name}}{% if item.pages and include.depth > 1 %} {% include_cached icon.html name="chevron-right" %}{% endif %}</span></a>
     {% if item.pages %}{% assign newdepth = include.depth | plus: "1"%}{% include navlist.html data=item.pages depth=newdepth %}{% endif %}
   </li>
 {% endfor %}
