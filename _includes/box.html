@@ -1,7 +1,7 @@
 {% if include.type == 'start' %}
 {% assign classes = include.class | split: " " %}
 <aside class="box{% for class in classes %} box-{{ class }}{% endfor %}">
-  <header class="box-h {% for class in classes %} box-h-{{ class }}{% endfor %}{% if input.icon %} box-h-icon{% endif %}">{% if input.icon %} {% include_cached icon.html name=input.icon %}{% endif %} {{ include.title}}</header>
+  <header class="box-h {% for class in classes %} box-h-{{ class }}{% endfor %}{% if include.icon %} box-h-icon{% endif %}">{% if include.icon %} {% include_cached icon.html name=include.icon %}{% endif %} {{ include.title}}</header>
   <div class="box-i">
 {% endif %}
 {% if  include.type == 'end' %}
