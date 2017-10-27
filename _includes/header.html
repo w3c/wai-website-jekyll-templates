@@ -29,12 +29,11 @@
       </li>
     </ul>
   </nav>
-  <nav class="mainnav" aria-label="Main">
-    {% include navlist.html data=site.data.navigation depth=1 %}
-  </nav>
 </div>
-
 </header>
+<nav class="mainnav" aria-label="Main">
+  {% include navlist.html data=site.data.navigation depth=1 %}
+</nav>
 
 {% unless page.url == "/" %}
 <nav class="breadcrumb default-grid" aria-label="Breadcrumb">
