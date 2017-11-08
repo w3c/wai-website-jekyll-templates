@@ -16,7 +16,10 @@
       {% if page.relatedpages %}{% for r in page.relatedpages %}<p>Related page: <a href="{{r.url}}">{{r.title}}</a></p>{% endfor %}{% endif %}
       {% for p in page.policies %}
         {% assign theslug = p.title.en | slugify %}
+        {% capture boxtitle %}
         {% include multilang-list.html title=p.title url=p.url external="true" wrap="h2" id=theslug class="policy-heading" %}
+        {% endcapture %}
+        {% include box.html type="start" title=boxtitle class="example" %}
         <div>
           <ul>
             <li>Date enacted: {{p.enactdate}}</li>
@@ -49,6 +52,7 @@
             {% endif %}
           </ul>
         </div>
+        {% include box.html type="end" %}
       {% endfor %}
     </div>
     {% include prevnext.html %}
