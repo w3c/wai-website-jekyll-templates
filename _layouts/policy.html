@@ -19,7 +19,7 @@
         {% capture boxtitle %}
         {% include multilang-list.html title=p.title url=p.url external="true" wrap="h2" id=theslug class="policy-heading" %}
         {% endcapture %}
-        {% include box.html type="start" title=boxtitle class="example" %}
+        {% include box.html type="start" title=boxtitle class="large" %}
         <div>
           <ul>
             <li>Date enacted: {{p.enactdate}}</li>
@@ -62,6 +62,6 @@
 </main>
 
 {% include footer.html %}
-
+<style>@import url('{{site.github.url}}/policies/css/policies.css');</style>
   </body>
 </html>
