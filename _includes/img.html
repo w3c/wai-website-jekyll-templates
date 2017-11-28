@@ -14,4 +14,4 @@
     {% endunless%}
   {% endfor %}
 {% endif %}
-<img src="{{url}}{{include.src}}"{% if include.srcset %} srcset="{{out}}"{% endif %} alt="{{include.alt}}"{% if include.class %} class="{% assign classes = include.class | split: " " %}{% for class in classes %} {{ class }}{% endfor %}"{% endif %}>
+<img src="{{url}}{{include.src}}"{% if include.srcset %} srcset="{{out}}"{% endif %} alt="{{include.alt}}"{% if include.class %} class="{% assign classes = include.class | split: " " %}{% for class in classes %} {{ class }}{% endfor %}"{% endif %}{% if include.float %} style="float: {{include.float}};"{% endif %}>
