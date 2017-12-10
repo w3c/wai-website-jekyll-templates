@@ -37,14 +37,14 @@
             <li>WCAG Version Used: {{p.wcagver}}</li>
             {% if p.standard %}
             {% unless p.standard == "None" or p.standard == "none" or p.standard == false %}
-            {% if p.standard %}
-              <li>Relevant Standard{%if p.standard.size > 1 %}s{%endif%}:
-                <ul>
-                  {% for d in p.standard %}<li>{% include multilang-list.html title=d.title url=d.url external="true" %}{%if d.desc %}<br>{{d.desc}}{%endif%}</li>{%endfor%}
-                </ul>
-              </li>
-            {% endif %}
-            {%endunless%}
+              {% if p.standard %}
+                <li>Relevant Standard{%if p.standard.size > 1 %}s{%endif%}:
+                  <ul>
+                    {% for d in p.standard %}<li>{% include multilang-list.html title=d.title url=d.url external="true" %}{%if d.desc %}<br>{{d.desc}}{%endif%}</li>{%endfor%}
+                  </ul>
+                </li>
+              {% endif %}
+            {% endunless %}
             {% endif %}
             {% if p.documents %}
               <li>Relevant Documents:
