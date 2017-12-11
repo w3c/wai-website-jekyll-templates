@@ -13,12 +13,12 @@
   {% assign lng = t[0]%}
   {% unless forloop.first %}<li lang="{{lng}}">{% endunless %}
   {% if forloop.first %}{% if include.wrap %}<{{include.wrap}}{% if include.id %} id="{{include.id}}"{% endif %}{% if include.class %} class="{{include.class}}"{% endif %}>{% endif %}{% endif %}
-  {% if thislangurl %}
-    <a href="{{thislangurl}}" hreflang="{{lng}}">
-  {% endif %}
   {% unless lng == "en" %}
     <span lang="en">{{site.data.lang[lng].name}}: </span>
   {% endunless %}
+  {% if thislangurl %}
+    <a href="{{thislangurl}}" hreflang="{{lng}}">
+  {% endif %}
   {{t[1]}}
   {% unless lng == "en" %}
     (<span lang="{{lng}}">{{site.data.lang[lng].nativeName}}</span>)
